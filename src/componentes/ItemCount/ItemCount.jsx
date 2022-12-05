@@ -23,7 +23,7 @@ const ItemCount = ({initial = 1, stock = 10, onAdd}) => {
     return (
         <div className='card'>
             <div className="card-header">
-                <label htmlFor="">{count}</label>
+                <label htmlFor="">cantidad a comprar: <input type="number" value={count}  disabled/></label>
             </div>
             <div className="card-body">
                 <button onClick={restar}>-</button>

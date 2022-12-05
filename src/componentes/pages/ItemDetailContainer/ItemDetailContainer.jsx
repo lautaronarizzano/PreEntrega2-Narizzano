@@ -7,7 +7,6 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
 
   const {productId} = useParams()
-console.log(product)
 console.log(productId);
   useEffect(() => {
     gFetch()

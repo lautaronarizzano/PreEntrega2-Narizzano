@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { gFetch } from '../../../../helpers/gfetch'
 import ItemList from '../../ItemList/ItemList'
 import './ItemListContainer.css'
 
 const ItemListContainer = () => {
     const [products, setProduct] = useState([])
+
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        gFetch()
-        .then(data => setProduct(data))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+    const { id } = useParams()
+    console.log(id);
 
-    }, [])
-    console.log(products)
+    useEffect(() => {
+        if (id) {
+            gFetch()
+            .then(data => setProduct(data.filter(prod => prod.categoria == id)))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        } else {
+            gFetch()
+            .then(data => setProduct(data))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+        }
+
+    }, [id])
+
     return (
         <main className='main'>
 
@@ -24,7 +35,6 @@ const ItemListContainer = () => {
             </section>
 
         <section className='container-burger'>
-            {loading? <p>.</p> : <h2 className='burger-h2'>Burgers</h2>}
             {loading ?
                 <h2 className='loading'>loading...</h2>
                 :
