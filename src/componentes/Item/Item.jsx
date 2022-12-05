@@ -1,0 +1,33 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const Item = ({ product }) => {
+    return (
+        <div
+            className='card-container'
+        >
+            <div className="card w-100 mt-5" >
+                <div className="card-header">
+                    <h3 className='name-product'>{`${product.nombre} - Hamburguesa`}</h3>
+                </div>
+                <div className="card-body">
+                    <img src={product.img} alt='' className='img' />
+                    <h4 className='price-product'>${product.precio}</h4>
+                </div>
+
+                <div className="card-footer">
+                    <Link to={`/detail/${product.id}`}>
+                        <button className="btn btn-outline-primary btn-block">
+                            detalle del producto
+                        </button>
+                    </Link>
+                </div>
+            </div>
+
+
+        </div>
+
+    )
+}
+
+export default Item

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "nombre": "Beef Burger",
+        "precio": 1000,
+        "img": ''
+    },
+    {
+        "id": "2",
+        "nombre": "CheeseBurger",
+        "precio": 1300,
+        "img": ''
+    },
+    {
+        "id": "3",
+        "nombre": "Creamy Mushroom",
+        "precio": 1500,
+        "img": ''
+    },
+    {
+        "id": "4",
+        "nombre": "Spicy Buffalo",
+        "precio": 1500,
+        "img": ''
+    },
+    {
+        "id": "5",
+        "nombre": "Barbeque Burger",
+        "precio": 1600,
+        "img": ''
+    },
+    {
+        "id": "6",
+        "nombre": "Hawaiian Burger",
+        "precio": 1700,
+        "img": ''
+    }
+]
