@@ -1,10 +1,11 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 
-const ItemDetail = ( {product} ) => {
+const ItemDetail = ({product}) => {
     const onAdd = (cant) => {
         console.log('La cantidad de productos agregados es:', cant)
     }
+    console.log(product);
     return (
         <div>
             <div>

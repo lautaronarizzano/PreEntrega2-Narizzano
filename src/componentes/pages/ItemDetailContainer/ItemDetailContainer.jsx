@@ -7,15 +7,15 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
 
   const {productId} = useParams()
+console.log(product)
 console.log(productId);
   useEffect(() => {
     gFetch()
-      .then(respProd => setProduct(respProd.find(prod => prod.id === productId)))
+      .then(respProd => setProduct(respProd.find(prod => prod.id == productId)))
       .catch(err => console.log(err))
 
   })
 
-  console.log(productId);
   return (
     <ItemDetail product={product}/>
   )

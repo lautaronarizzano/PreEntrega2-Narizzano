@@ -45,7 +45,7 @@ export const gFetch = () => {
         if (condition) {
             setTimeout(() => {
                 resolve(obj)
-            }, 3000)
+            }, 1500)
         } else {
             reject('error fetch')
         }
