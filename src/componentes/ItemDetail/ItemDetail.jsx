@@ -9,17 +9,17 @@ const ItemDetail = ( {product} ) => {
         <div>
             <div>
                 <div>
-                    <img src="" alt="" />
+                    <img src={product.img} alt="" />
                     <h3>nombre: {product.nombre}</h3>
                     <h3>categoria: {product.categoria}</h3>
                     <h4>precio: {product.precio}</h4>
                 </div>
                 <div>
-                    {/* <ItemCount
+                    <ItemCount
                     stock={5}
                     initial={1}
                         onAdd={onAdd}
-                    /> */}
+                    />
                 </div>
             </div>
         </div>
