@@ -1,23 +1,23 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { gFetch } from '../../../../helpers/gfetch'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState([])
+    const [product, setProduct] = useState([])
 
-  const {productId} = useParams()
-console.log(productId);
-  useEffect(() => {
-    gFetch()
-      .then(respProd => setProduct(respProd.find(prod => prod.id == productId)))
-      .catch(err => console.log(err))
+    const { productId } = useParams()
 
-  })
+    useEffect(() => {
+        gFetch()
+            .then(respProd => setProduct(respProd.find(prod => prod.id == productId)))
+            .catch(err => console.log(err))
 
-  return (
-    <ItemDetail product={product}/>
-  )
+    })
+
+    return (
+        <ItemDetail product={product} />
+    )
 }
 
 export default ItemDetailContainer

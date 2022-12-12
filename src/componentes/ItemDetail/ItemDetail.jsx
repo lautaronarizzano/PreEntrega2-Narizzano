@@ -1,11 +1,21 @@
 import React from 'react'
+import { useCartContext } from '../../Context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
 const ItemDetail = ({product}) => {
+
+    const { cartList, agregarCarrito} = useCartContext()
+
     const onAdd = (cant) => {
+
         console.log('La cantidad de productos agregados es:', cant)
+
+        agregarCarrito( { ...product, cant } )
     }
+
+    console.log(cartList)
+
     return (
         <div className='itemDetailContenedor'>
             <div className='itemDetail'>
